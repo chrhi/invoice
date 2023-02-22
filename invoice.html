@@ -16,202 +16,156 @@
         font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
         color: #555;
     }
-    
-    .invoice-box table {
+    .header-invoice{
         width: 100%;
-        line-height: inherit;
-        text-align: left;
+        height: 150px;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    .black-line{
+        width: 100%;
+        border-bottom: rgb(30 64 175) 5px solid ;
+    }
+    table{
+        width: 100%;
+        height: fit-content;
+        border-bottom: rgb(229 231 235 ) solid 1px;
+        border-left: rgb(229 231 235 ) solid 1px;
+        border-right: rgb(229 231 235 ) solid 1px;
+
     }
     
-    .invoice-box table td {
-        padding: 5px;
-        vertical-align: top;
-    }
-    
-    .invoice-box table tr td:nth-child(2) {
-        text-align: right;
-    }
-    
-    .invoice-box table tr.top table td {
-        padding-bottom: 20px;
-    }
-    
-    .invoice-box table tr.top table td.title {
-        font-size: 45px;
-        line-height: 45px;
-        color: #333;
-    }
-    
-    .invoice-box table tr.information table td {
-        padding-bottom: 40px;
-    }
-    
-    .invoice-box table tr.heading td {
-        background: #eee;
-        border-bottom: 1px solid #ddd;
-        font-weight: bold;
-    }
-    
-    .invoice-box table tr.details td {
-        padding-bottom: 20px;
-    }
-    
-    .invoice-box table tr.item td{
-        border-bottom: 1px solid #eee;
-    }
-    
-    .invoice-box table tr.item.last td {
-        border-bottom: none;
-    }
-    
-    .invoice-box table tr.total td:nth-child(2) {
-        border-top: 2px solid #eee;
-        font-weight: bold;
-    }
-    
-    @media only screen and (max-width: 600px) {
-        .invoice-box table tr.top table td {
-            width: 100%;
-            display: block;
-            text-align: center;
-        }
+    .row{
+        background-color: rgb(229 231 235 );
+      
         
-        .invoice-box table tr.information table td {
-            width: 100%;
-            display: block;
-            text-align: center;
-        }
     }
-    
-    /** RTL **/
-    .rtl {
-        direction: rtl;
-        font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    .colHeader{
+        background-color: rgb(229 231 235 );
+        font-size: 1.1rem;
+        font-weight: 700;
+        padding: 0.5rem;
+        text-align: start;
     }
-    
-    .rtl table {
-        text-align: right;
+    .col{
+       
+        padding: 0.5rem;
+        text-align: start;
     }
-    
-    .rtl table tr td:nth-child(2) {
-        text-align: left;
+    .box{
+        width: 96%;
+        height: 200px;
+        border-radius: 8px;
+        display: flex;
+       align-items: center;
+        flex-direction: column;
+        background: rgb(229 231 235 );
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 1rem;
+    }
+
+    .flex-row{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        height: 40px;
+    }
+    .note-box{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100px;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
     }
     </style>
 </head>
 
 <body>
     <div class="invoice-box">
-        <table cellpadding="0" cellspacing="0">
-            <tr class="top">
-                <td colspan="2">
-                    <table>
-                        <tr>
-                            <td class="title">
-                                <img src="logo.png" style="width:100%; max-width:100px;">
-                            </td>
-                            
-                            <td>
-                                Invoice #: 123<br>
-                                Created: January 1, 2021<br>
-                                Due: February 1, 2021
-                            </td>
-                          
-                        </tr>
-                    </table>
-                </td>
+        <!-- this is the head of the invoice -->
+        <div class="header-invoice">
+            <div style="width: 50%;">
+                <h2>Your Company name</h2>
+                <p>City ST zip</p>
+                <p>phone number</p>
+            </div>
+            <div style="width: 50%;">
+                <h2>Invoice</h2>
+                <p>date</p>
+                <p>invoice number :999</p>
+            </div>
+        </div>
+        <div class="black-line"></div>
+         <!-- this is the head of the invoice -->
+        <div class="header-invoice">
+                <div style="width: 50%;">
+                    <h2>to </h2>
+                    <p>salah4v4@gmail.com</p>
+                    <p>this is has to be a log time ago </p>
+                </div>
+                <div style="width: 50%;">
+                    <h2>from</h2>
+                    
+                    <p>this is a log detail and has to be greate</p>
+                </div>
+        </div>
+
+        <!-- this is the table  -->
+        <table>
+            <tr class="row">
+                <th class="colHeader">Description</th>
+                <th class="colHeader" >quantity</th>
+                <th class="colHeader">price</th>
+                <th class="colHeader">total</th>
             </tr>
-            
-            <tr class="information">
-                <td colspan="2">
-                    <table>
-                        <tr>
-                            <td>
-                               <b>YourCodeCamp</b> , Inc.<br>
-                                12345 Sunny Road<br>
-                                Sunnyville, CA 12345
-                            </td>
-                            
-                            <td>
-                                YourCodeCamp Corp.<br>
-                                Sam Doe<br>
-                                john@example.com
-                            </td>
-                        </tr>
-                    </table>
-                </td>
+            <tr>
+                <td class="col">this has to be log desction</td>
+                <td class="col">3</td>
+                <td class="col">66$</td>
+                <td class="col">567$</td>
             </tr>
-            
-            <tr class="heading">
-                <td>
-                    Payment Method
-                </td>
-                
-                <td>
-                    Online #
-                </td>
+            <tr>
+                <td class="col">this has to be log desction</td>
+                <td class="col">3</td>
+                <td class="col">66$</td>
+                <td class="col">567$</td>
             </tr>
-            
-            <tr class="details">
-                <td>
-                    Debit
-                </td>
-                
-                <td>
-                    1000
-                </td>
-            </tr>
-            
-            <tr class="heading">
-                <td>
-                    Item
-                </td>
-                
-                <td>
-                    description
-                </td>
-                <td>
-                    Price
-                </td>
-            </tr>
-            
-            <tr class="item">
-                <td>
-                    Website design
-                </td>
-                
-                <td>
-                    $300.00
-                </td>
-            </tr>
-            
-            <tr class="item">
-                <td>
-                    Hosting (3 months)
-                </td>
-                
-                <td>
-                    $75.00
-                </td>
-            </tr>
-            
-            <tr class="item last">
-                <td>
-                    Domain name (1 year)
-                </td>
-                
-                <td>
-                    $10.00
-                </td>
-            </tr>
-            
-            <tr class="total">
-                <td></td>
-                
-                <td>
-                   Total: $385.00
-                </td>
+            <tr>
+                <td class="col">this has to be log desction</td>
+                <td class="col">3</td>
+                <td class="col">66$</td>
+                <td class="col">567$</td>
             </tr>
         </table>
+        <!-- this is the table that shows the status of the the invoice -->
+        <div class="box">
+            <div class="flex-row">
+                <h2>subtotal</h2>
+                <h2>00.00$</h2>
+            </div>
+            <div class="flex-row">
+                <h2>discount</h2>
+                <h2>200$</h2>
+            </div>
+            <div class="flex-row">
+                <h2>tax</h2>
+                <h2>2%</h2>
+            </div>
+            <div class="flex-row">
+                <h2>total due</h2>
+                <h2 style=" color:#1515f7;">00.00$</h2>
+            </div>
+        </div>
+           <!-- this is the table that shows the status of the the invoice -->
+        <div class="note-box">
+            <h1>Note</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit reprehenderit dignissimos possimus accusantium libero quaerat repellat laboriosam? Nulla sint magni consectetur numquam ad suscipit nemo expedita esse necessitatibus, accusamus voluptas.</p>
+        </div>
     </div>
 </body>
 </html>
